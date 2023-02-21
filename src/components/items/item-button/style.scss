@@ -1,0 +1,12 @@
+button {
+	@apply text-3xl;
+	@screen m {
+		hyphens: none;
+	}
+	transition: var(--transition-smooth);
+	cursor: pointer;
+	user-select: none;
+	&:hover {
+		@apply bg-primary-100 rounded-xs px-s py-xs;
+	}
+}

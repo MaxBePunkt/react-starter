@@ -1,0 +1,22 @@
+// Generate the colors here: https://www.tailwindshades.com/
+
+:root {
+	--primary-100: hsl(208, 89%, 86%);
+	--primary-400: hsl(207, 90%, 61%);
+	--primary-500: hsl(207, 90%, 54%);
+	--primary-600: hsl(208, 79%, 51%);
+	--primary-900: hsl(216, 85%, 34%);
+
+	--primary: var(--primary-500);
+
+	--secondary-100: hsl(45, 100%, 85%);
+	--secondary-400: hsl(45, 100%, 58%);
+	--secondary-500: hsl(45, 100%, 51%);
+	--secondary-600: hsl(42, 100%, 50%);
+	--secondary-900: hsl(26, 100%, 50%);
+
+	--secondary: var(--secondary-500);
+
+	--black: hsl(0, 2%, 9%);
+	--white: hsl(0, 0%, 100%);
+}

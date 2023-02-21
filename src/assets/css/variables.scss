@@ -1,0 +1,15 @@
+@import './variables/_spacings.scss';
+@import './variables/_colors.scss';
+@import './variables/_fonts.scss';
+@import './variables/_gradients.scss';
+
+:root {
+	--opacity: 100%;
+	--bezier-smooth: cubic-bezier(0.55, 0, 0.29, 1);
+	--bezier-smooth-out: cubic-bezier(0, 1, 0.8, 1);
+	--bezier-smooth-in: cubic-bezier(0, 0, 1, 0);
+	--transition-smooth: all 0.4s var(--bezier-smooth);
+	--shift: 0;
+	--scroll-shift: 0;
+	--shift-speed: 0%;
+}

@@ -1,0 +1,14 @@
+/* Webfont: Sud-Regular */
+@font-face {
+	font-family: 'Sud';
+	src: url('Sud-Regular.eot'); /* IE9 Compat Modes */
+	src: url('Sud-Regular.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */ url('Sud-Regular.woff2') format('woff2'),
+		/* Modern Browsers */ url('Sud-Regular.woff') format('woff'),
+		/* Modern Browsers */ url('Sud-Regular.ttf') format('truetype'),
+		/* Safari, Android, iOS */ url('Sud-Regular.svg#Sud-Regular')
+			format('svg'); /* Legacy iOS */
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
+}
