@@ -1,0 +1,10 @@
+@use '../abstracts/variables/font';
+@use '../abstracts/variables/color';
+/**
+ * Basic typography style for copy text
+ */
+body {
+	color: color.$black;
+	font: normal 125% / 1.4 font.$family-default;
+	font-size: font.$base-size;
+}

@@ -1,0 +1,32 @@
+// # Breakpoint variables
+
+// Please update, add or remove the variables below to match the project needs.
+
+$xxxs: 20em; // 320px
+$xxs: 22.5em; // 360px
+$xs: 26em; // 416px
+$s: 48em; // 768px
+$m: 54em; // 864px
+$l: 64em; // 1024px
+$xl: 75em; // 1200px
+$xxl: 83.125em; // 1330px
+$xxxl: 90em; // 1440px
+
+// ## Screen resolutions
+$full-hd: 120em; // 1920px
+$full-hd-height: 67.5em; // 1080px
+$four-k: 240em; // 3840px
+$four-k-height: 135em; // 2160px
+
+// ## Breakpoints Map
+$breakpoints: (
+	'small': (
+		min-width: $s
+	),
+	'medium': (
+		min-width: $l
+	),
+	'large': (
+		min-width: $xl
+	)
+);

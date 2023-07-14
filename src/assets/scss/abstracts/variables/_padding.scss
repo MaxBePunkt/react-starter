@@ -1,0 +1,24 @@
+@use './spacing';
+
+// ## Padding variables
+
+// Set all generic or custom paddings here.
+// Usage example :
+// ```scss
+// @use "variables/padding";
+//
+// .container {
+//   padding-left: padding.$container-horizontal;
+//   padding-right: padding.$container-horizontal;
+// }
+// ```
+
+// Please update, add or remove the variables below to match the project needs.
+
+// ## Custom padding variables
+// For example :
+// $container-horizontal: 40px;
+
+// ## Buttons
+$button-vertical: spacing.$xxs;
+$button-horizontal: spacing.$m;
