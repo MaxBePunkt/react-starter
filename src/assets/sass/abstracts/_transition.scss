@@ -1,0 +1,33 @@
+/**
+ * Animation and Transition Variables
+ *
+ * The following variables define durations, delays, and timing functions for animations and transitions.
+ * These variables provide a consistent and reusable approach for defining animations and transitions throughout the application.
+ */
+
+// Duration Variables
+$duration-short: 150ms;
+$duration-medium: 300ms;
+$duration-long: 500ms;
+
+// Delay Variables
+$delay-short: 150ms;
+$delay-medium: 300ms;
+$delay-long: 500ms;
+
+// Timing Function Variables
+$timing-function-ease: ease;
+$timing-function-ease-in: ease-in;
+$timing-function-ease-out: ease-out;
+$timing-function-ease-in-out: ease-in-out;
+$timing-function-linear: linear;
+$timing-function-step-start: step-start;
+$timing-function-step-end: step-end;
+
+// Default Delay, Duration, and Timing Function
+$delay-default: 0;
+$duration-default: $duration-short;
+$timing-function-default: $timing-function-ease-in-out;
+
+// Default Animation and Transition Value
+$default: $duration-default $timing-function-default $delay-default;

@@ -1,0 +1,39 @@
+/**
+ * Shade a Color
+ *
+ * Mixes a color with black to create a shaded color.
+ *
+ * @param {color} $color - The base color to be shaded.
+ * @param {number} $weight - The percentage of black to mix with the `$color`.
+ *                          Range: 0 to 100. 0 means no black, 100 means full black.
+ *
+ * @return {color} - The shaded color resulting from mixing the `$color` with black.
+ *
+ * @example
+ * $primary-color: #3498db;
+ * $shaded-primary: shade-color($primary-color, 30%);
+ */
+
+/**
+ * Tint a Color
+ *
+ * Mixes a color with white to create a tinted color.
+ *
+ * @param {color} $color - The base color to be tinted.
+ * @param {number} $weight - The percentage of white to mix with the `$color`.
+ *                          Range: 0 to 100. 0 means no white, 100 means full white.
+ *
+ * @return {color} - The tinted color resulting from mixing the `$color` with white.
+ *
+ * @example
+ * $secondary-color: #e74c3c;
+ * $tinted-secondary: tint-color($secondary-color, 20%);
+ */
+
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}

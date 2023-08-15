@@ -1,0 +1,58 @@
+@use "../abstracts" as *;
+
+:root {
+
+  // Setting custom CSS variables for colors based on the active theme
+  @each $color,
+  $shade-map in $active-theme {
+
+    @each $shade,
+    $value in $shade-map {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  // Enabling dark mode support
+  @if ($enable-media-query-dark-mode) {
+
+    // Media query to apply custom variables for dark mode
+    @media (prefers-color-scheme: dark) {
+
+      // Setting custom CSS variables for colors based on the 'dark' theme
+      @each $color,
+      $shade-map in $dark {
+
+        @each $shade,
+        $value in $shade-map {
+          --#{$color}-#{$shade}: #{$value};
+        }
+      }
+    }
+  }
+
+  // Setting custom CSS variables for font sizes
+  @each $screen-size,
+  $size-map in $font-sizes {
+    @if $screen-size ==small {
+
+      // Setting font sizes for small screens (without media query)
+      @each $size-name,
+      $size-value in $size-map {
+        --fs-#{$size-name}: #{$size-value};
+      }
+    }
+
+    @else {
+
+      // Using a mixin 'mq' to apply font sizes for different screen sizes
+      @include mq($screen-size) {
+
+        // Setting font sizes for larger screens based on media query
+        @each $size-name,
+        $size-value in $size-map {
+          --fs-#{$size-name}: #{$size-value};
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use 'breakpoints' as *;
+@use "settings" as *;
+
+/**
+ * Media Query Mixin - `mq`
+ *
+ * The `mq` mixin simplifies the creation of media queries by providing a flexible and versatile
+ * approach to define breakpoints. It supports both predefined breakpoints from a Sass map and custom
+ * numerical breakpoint values with units.
+ *
+ * @usage
+ * 1. Using predefined breakpoints from the `breakpoints` map:
+ *    @include mq('medium') {
+ *      // Your styles for medium screens go here
+ *    }
+ *
+ * 2. Using custom numerical breakpoint values:
+ *    @include mq(768px) {
+ *      // Your styles for screens with a minimum width of 768px go here
+ *    }
+ *
+ * @error-handling
+ * - If you use an undefined keyword with `mq`, an error will be thrown.
+ * - If you pass a numerical value without a unit (e.g., 768 instead of 768px), an error will be thrown.
+ *
+ * @param {string | number} $size - The breakpoint value. It can be either a predefined keyword
+ *                                  from the `breakpoints` map or a numerical value with a unit.
+ *
+ * @throws {Error} If the `$size` is not found in the `breakpoints` map or if a numerical value
+ *                 is provided without a unit.
+ *
+ * @example
+ * // Usage with predefined breakpoints
+ * @include mq('medium') {
+ *   // Your styles for medium screens go here
+ * }
+ *
+ * // Usage with custom numerical breakpoint value
+ * @include mq(768px) {
+ *   // Your styles for screens with a minimum width of 768px go here
+ * }
+ */
+
+/**
+ * The `mq` mixin generates media queries based on predefined or custom breakpoints.
+ *
+ * @param {string | number} $size - The breakpoint value.
+ */
+@mixin mq($size) {
+  // Checking if the '$size' is a key in the 'breakpoints' map
+  @if map.has-key($breakpoints, $size) {
+    // If '$size' is found in the 'breakpoints' map
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (min-width: $breakpoint) {
+      @content; // Generate a media query using '$breakpoint' and wrap the content of the mixin inside it
+    }
+  } @else if meta.type-of($size) == number {
+    // If '$size' is not found in the 'breakpoints' map but is a numerical value
+    @if math.is-unitless($size) {
+      // If the numerical value has no unit (e.g., 768 instead of 768px)
+      @error 'when using a number with @mq() make sure to include a unit'; // Throw an error asking the user to include a unit
+    } @else {
+      // If the numerical value has a unit (e.g., 768px)
+      @media screen and (min-width: $size) {
+        @content; // Generate a media query using '$size' and wrap the content of the mixin inside it
+      }
+    }
+  } @else {
+    // If '$size' is neither found in the 'breakpoints' map nor a numerical value
+    @error 'the keyword #{$size} is not in the $breakpoints map'; // Throw an error indicating that the keyword is not present in the 'breakpoints' map
+  }
+}
+
+/**
+ * Heading Mixin
+ *
+ * This SCSS mixin provides a convenient way to apply consistent styles to headings throughout the application.
+ * It allows you to set the font size and color for the heading, with optional default values provided for color.
+ * The mixin also applies additional typographic styles such as font family, text-transform, letter spacing,
+ * font weight, and line height based on the values defined in the theme variables.
+ *
+ * @param {number} $fs - The font size for the heading. Use unit-based values (e.g., 'rem', 'px').
+ * @param {color} [$color: $heading-color-default] - The color for the heading. Default value is based on the
+ *                                                  $heading-color-default variable from the theme.
+ */
+@mixin heading($fs, $color: $heading-color-default) {
+  font-size: $fs;
+  color: $color;
+
+  font-family: $heading-font-family;
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letter-spacing;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+}

@@ -7,12 +7,12 @@
 	.scrolldown {
 		width: 45px;
 		height: 70px;
-		border: 2px solid var(--black);
+		border: 2px solid var(--neutral-000);
 		border-radius: 30px;
 		display: flex;
 		justify-content: center;
 		span {
-			background-color: var(--black);
+			background-color: var(--neutral-000);
 			width: 5px;
 			height: 10px;
 			border-radius: 30px;
@@ -24,8 +24,8 @@
 				width: 15px;
 				height: 15px;
 				border: none;
-				border-right: 2px solid var(--black);
-				border-top: 2px solid var(--black);
+				border-right: 2px solid var(--neutral-000);
+				border-top: 2px solid var(--neutral-000);
 				transform: translateY(-10px) rotate(135deg);
 				left: -5px;
 				margin-top: 10px;
@@ -38,8 +38,8 @@
 				width: 15px;
 				height: 15px;
 				border: none;
-				border-right: 2px solid var(--black);
-				border-top: 2px solid var(--black);
+				border-right: 2px solid var(--neutral-000);
+				border-top: 2px solid var(--neutral-000);
 				transform: translateY(-10px) rotate(135deg);
 				left: -5px;
 				margin-top: 10px;

@@ -1,0 +1,31 @@
+// _navigation.scss
+
+@use "../abstracts" as *;
+
+.nav {
+  --flex-column-gap: #{$navigation-gap};
+  list-style: none;
+  font-family: $navigation-font-family;
+  font-weight: $navigation-font-weight;
+  display: flex;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: var(--flex-column-gap, $navigation-gap);
+  }
+
+  &__item {
+    flex: 1;
+  }
+
+  &__link {
+    color: $navigation-color;
+    text-decoration: $navigation-link-text-decoration;
+
+    &:hover,
+    &:focus {
+      color: $navigation-color-hover;
+    }
+  }
+}
